@@ -39,7 +39,7 @@
             </div>
             <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">
-                    <p>相册</p>
+                    <p>抓拍照片</p>
                 </div>
                 <div class="weui-cell__ft" style="-webkit-flex: 4;text-align: left;">
                     <div class="album-list">
@@ -59,15 +59,22 @@
 
          <div >
              
-            <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">发命令</span>
+            <!-- <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">发命令</span> -->
             <router-link :to="{path:'/wechat/'+userInfo.type,query: {wx_id}}" tag="span"    >
-            <span class="weui-btn weui-btn_default" style="width:90%;margin-top:20px;">视频</span>
+            <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">直播</span>
             </router-link>
+
+             <a href="https://open.ys7.com/view/h5/e364754d10cc40408dcde63f6646fb28" class="weui-btn weui-btn_default" style="width:90% ;margin-top:20px;">备用直播</a>
           
         </div>
+
+        
+       
+
+
         <!-- <a href="javascript:;" class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">发消息</a>
         <a href="javascript:;" class="weui-btn weui-btn_default" style="width:90%">视频</a> -->
-
+        
     </div>
 </template>
 <script>

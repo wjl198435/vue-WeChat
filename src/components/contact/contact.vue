@@ -27,28 +27,41 @@
                     </div>
                 </router-link>
             </div>
+            
             <!--联系人集合-->
-            <template v-for="(value,key) in contactsList">
-                <!--首字母-->
-                <div :ref="`key_${key}`" class="weui-cells__title">{{key}}</div>
-                <div class="weui-cells">
-                    <router-link :key="item.wxid" :to="{path:'/contact/details',query:{wxid:item.wxid}}" class="weui-cell weui-cell_access" v-for="item in value"
-                        tag="div">
-                        <div class="weui-cell__hd">
-                            <img :src="item.headerUrl" class="home__mini-avatar___1nSrW">
+            <template   >
+                
+                <div :ref="x" class="weui-cells__title">视频</div>
+                <div   class="weui-cells" >
+                    <router-link :key="item.deviceSerial" :to="{path:'/contact/details',query:{wxid:item.deviceSerial}}" class="weui-cell weui-cell_access" 
+                    v-for="item in videoList"  tag="div">
+                         <div class="weui-cell__hd" >
+                            <img :src='imgBaseUrl+"camera.jpg"'  class="home__mini-avatar___1nSrW" >
                         </div>
-                        <div class="weui-cell__bd">
-                            {{item.remark?item.remark:item.nickname}}
-                        </div>
-                    </router-link>
+                           <ul style="margin:0; padding:0px; list-sytle:none">
+                            <li>
+                                <span style="font-size:1.0rem"> 
+                                    {{item.deviceName}} 
+                                </span> 
+                            </li> 
+                            <li >
+                                <span :class="[item.status?'iconfont icon-online':'iconfont icon-offline']" ></span>
+                                <span class="iconfont icon-smart"></span>
+                            </li>
+                        </ul>
+                    </router-link> 
                 </div>
             </template>
+                
+
 </section>
 <!--检索-->
-<div class="initial-bar"><span @click="toPs(i)" v-for="i in contactsInitialList">{{i}}</span></div>
+<div class="initial-bar">
+    <span @click="toPs(i)" v-for="i in contactsInitialList">{{i}}</span></div>
 </div>
 </template>
 <script>
+  import { mapState } from 'vuex'
     export default {
         mixins: [window.mixin],
         data() {
@@ -56,23 +69,33 @@
                 "pageName": "万物联"
             }
         },
+        async created () {
+            console.log("contact--> created!")
+          this.$store.dispatch('fetchVideoes')
+        },
         mounted() {
             // mutations.js中有介绍
             this.$store.commit("toggleTipsStatus", -1)
+            
         },
         activated() {
             this.$store.commit("toggleTipsStatus", -1)
         },
         computed: {
-            contactsInitialList() {
-                return this.$store.getters.contactsInitialList
-            },
-            contactsList() {
-                return this.$store.getters.contactsList
-            }
+             
+            ...mapState(
+                [ 
+                    'imgBaseUrl',
+                    'videoList',
+                    'sensorList',
+                    'switchList',
+                    'arlamList',
+                ]
+            )
+
         },
         mounted() {
-
+            //console.log("mounted videoList:"+JSON.stringify())
         },
         methods: {
             toPs(i){

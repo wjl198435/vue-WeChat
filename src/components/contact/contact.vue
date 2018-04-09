@@ -56,8 +56,9 @@
 
 </section>
 <!--检索-->
-<div class="initial-bar">
-    <span @click="toPs(i)" v-for="i in contactsInitialList">{{i}}</span></div>
+<!-- <div class="initial-bar">
+    <span @click="toPs(i)" v-for="i in contactsInitialList">{{i}}</span>
+</div> -->
 </div>
 </template>
 <script>
@@ -71,7 +72,7 @@
         },
         async created () {
             console.log("contact--> created!")
-          this.$store.dispatch('fetchVideoes')
+          await this.$store.dispatch('fetchVideoes')
         },
         mounted() {
             // mutations.js中有介绍

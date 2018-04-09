@@ -3,18 +3,20 @@
         <header id="wx-header">
             <div class="center">
                 <router-link to="/contact" tag="div" class="iconfont icon-return-arrow">
-                    <span>通讯录</span>
+                    <span>物联网</span>
                 </router-link>
                 <span>详细资料</span>
             </div>
         </header>
         <div class="weui-cells">
             <div class="weui-cell">
-                <div class="weui-cell__hd"><img :src="userInfo.headerUrl" alt="" class="self-header" style="width:60px"></div>
+                <div class="weui-cell__hd"><img :src='imgBaseUrl+"camera.jpg"' alt="" class="self-header" style="width:60px"></div>
+                <!-- <span>{{currentVideo}}</span> -->
                 <div class="weui-cell__bd">
-                    <h4 class="self-nickname">{{userInfo.nickname}}<span class="gender" :class="[userInfo.sex===1?'gender-male':'gender-female']"></span></h4>
-                    <p class="self-wxid" style="font-size: 13px;color: #999;">序列号: {{userInfo.wxid}}</p>
-                    <p class="nickname" style="font-size: 13px;color: #999;">类型:{{userInfo.nickname||'无'}}</p>
+                    <!-- <h4 class="self-nickname">{{userInfo.nickname}}<span class="gender" :class="[userInfo.sex===1?'gender-male':'gender-female']"></span></h4> -->
+                    <h4 class="self-nickname">{{currentVideo.deviceName}}</h4>
+                    <p class="self-wxid" style="font-size: 13px;color: #999;">序列号: {{currentVideo.deviceSerial}}</p>
+                    <p class="nickname" style="font-size: 13px;color: #999;">型号:{{currentVideo.model||'无'}}</p>
                 </div>
             </div>
         </div>
@@ -34,7 +36,12 @@
                     <p>状态</p>
                 </div>
                 <div class="weui-cell__ft" style="-webkit-flex: 4;text-align: left;">
-                    <span v-for="item in userInfo.area">{{item}}&nbsp;&nbsp;&nbsp;</span>
+                     <!-- <span v-for="item in userInfo.area">{{item}}&nbsp;&nbsp;&nbsp;</span>  -->
+                     <span>{{status[currentVideo.status]}}&nbsp;</span>
+                     <span>{{defence[currentVideo.defence]}}&nbsp;</span>
+                     <span>{{isEncrypt[currentVideo.isEncrypt]}}&nbsp;</span>
+                     <span>{{alarmSoundMode[currentVideo.alarmSoundMode]}}&nbsp;</span>
+                     <span>{{offlineNotify[currentVideo.offlineNotify]}}&nbsp;</span>
                 </div>
             </div>
             <div class="weui-cell weui-cell_access">
@@ -43,7 +50,7 @@
                 </div>
                 <div class="weui-cell__ft" style="-webkit-flex: 4;text-align: left;">
                     <div class="album-list">
-                        <img :src="item.imgSrc" style="width:50px;margin:0 5px" v-for="item in userInfo.album">
+                        <!-- <img :src="item.imgSrc" style="width:50px;margin:0 5px" v-for="item in userInfo.album"> -->
                     </div>
                 </div>
             </div>
@@ -60,7 +67,7 @@
          <div >
              
             <!-- <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">发命令</span> -->
-            <router-link :to="{path:'/wechat/'+userInfo.type,query: {wx_id}}" tag="span"    >
+            <router-link :to="{path:'/wechat/',query: {wx_id}}" tag="span"    >
             <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">直播</span>
             </router-link>
 
@@ -78,20 +85,40 @@
     </div>
 </template>
 <script>
+    import {mapState} from 'vuex'
     import contact from "../../vuex/contacts"
     export default {
         data() {
             return {
+                status:["不在线","在线"],
+                defence:['撤防','布防'],
+                isEncrypt:['不加密','加密'],
+                alarmSoundMode:['短叫','长叫','静音'],
+                offlineNotify:['不通知','通知'],
                 pageName: "",
                 wx_id:this.$route.query.wxid
             }
         },
         computed: {
            
-            userInfo() {
-                return contact.getUserInfo(this.$route.query.wxid)
-            }
-        }
+           ...mapState([
+               'imgBaseUrl',
+               'currentVideo'
+           ]
+               
+           )
+            // userInfo() {
+            //     return contact.getUserInfo(this.$route.query.wxid)
+            // }
+        },
+         
+         async mounted()  {
+          console.log("details--> created! wx_id:",this.wx_id)
+          
+          await this.$store.dispatch('fetchVideoInfo',{
+              deviceSerial:this.wx_id
+              })
+        },
     }
 </script>
 <style>

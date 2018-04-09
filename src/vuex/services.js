@@ -63,6 +63,13 @@ class Services {
     return axios.post('/ys7/selectListDevices',{})
     //return axios.post(`${baseUrl}/ys7/selectListDevices`,{})
   }
+
+  fetchVideoeInfo({deviceSerial}){
+    console.log("services->fetchVideoInfo ")
+    return axios.post('/ys7/selectDeviceInfo',{
+        deviceSerial
+    })
+  }
 }
 
 export default new Services()

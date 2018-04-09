@@ -15,6 +15,7 @@ const state = {
     currentLang: "zh", //当前使用的语言 zh：简体中文 en:英文 后期需要
     newMsgCount: 10, //新消息数量
     videoList:[],
+    currentVideo:{},
     sensorList:{},
     switchList:{},
     arlamList:{},

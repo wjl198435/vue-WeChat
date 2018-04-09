@@ -161,5 +161,14 @@ export default {
    
     //console.log("state.videoLists:"+JSON.stringify(state.videoList))
     return res
+  },
+
+  async fetchVideoInfo ({ state },_id) {
+     console.log("actions->fetchVideoInfo")
+     const res = await Services.fetchVideoeInfo(_id)
+     state.currentVideo = res.data.data.data
+   
+    console.log("state.fetchVideoInfo:"+JSON.stringify(state.currentVideo))
+    return res
   }
 }

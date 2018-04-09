@@ -11,14 +11,24 @@ Vue.use(Vuex)
     // 统一管理接口域名 
 let apiPublicDomain = '//vrapi.snail.com/'
 const state = {
-    imgBaseUrl,
+    
     currentLang: "zh", //当前使用的语言 zh：简体中文 en:英文 后期需要
     newMsgCount: 10, //新消息数量
+
+    imgBaseUrl,
+    status:["不在线","在线"],
+    defence:['撤防','布防'],
+    isEncrypt:['不加密','加密'],
+    alarmSoundMode:['短叫','长叫','静音'],
+    offlineNotify:['不通知','通知'],
     videoList:[],
     currentVideo:{},
     sensorList:{},
     switchList:{},
     arlamList:{},
+
+
+
     allContacts: contact.contacts, //所有联系人
     OfficialAccounts: OfficialAccounts, //所有关注的公众号
     currentPageName: "物语", //用于在wx-header组件中显示当前页标题

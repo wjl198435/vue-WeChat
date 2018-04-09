@@ -3,7 +3,7 @@
         <header id="wx-header">
             <div class="center">
                 <router-link to="/contact" tag="div" class="iconfont icon-return-arrow">
-                    <span>物联网</span>
+                    <span>云设备</span>
                 </router-link>
                 <span>详细资料</span>
             </div>
@@ -14,7 +14,7 @@
                 <!-- <span>{{currentVideo}}</span> -->
                 <div class="weui-cell__bd">
                     <!-- <h4 class="self-nickname">{{userInfo.nickname}}<span class="gender" :class="[userInfo.sex===1?'gender-male':'gender-female']"></span></h4> -->
-                    <h4 class="self-nickname">{{currentVideo.deviceName}}</h4>
+                    <h4 class="self-nickname">{{currentVideo.deviceName}} &nbsp;<span :class="[currentVideo.status?'iconfont icon-online':'iconfont icon-offline']" ></span></h4>
                     <p class="self-wxid" style="font-size: 13px;color: #999;">序列号: {{currentVideo.deviceSerial}}</p>
                     <p class="nickname" style="font-size: 13px;color: #999;">型号:{{currentVideo.model||'无'}}</p>
                 </div>
@@ -67,7 +67,7 @@
          <div >
              
             <!-- <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">发命令</span> -->
-            <router-link :to="{path:'/wechat/',query: {wx_id}}" tag="span"    >
+            <router-link :to="{path:'/wechat/video',query: {wx_id}}" tag="span"    >
             <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">直播</span>
             </router-link>
 
@@ -90,11 +90,7 @@
     export default {
         data() {
             return {
-                status:["不在线","在线"],
-                defence:['撤防','布防'],
-                isEncrypt:['不加密','加密'],
-                alarmSoundMode:['短叫','长叫','静音'],
-                offlineNotify:['不通知','通知'],
+                
                 pageName: "",
                 wx_id:this.$route.query.wxid
             }
@@ -102,8 +98,13 @@
         computed: {
            
            ...mapState([
-               'imgBaseUrl',
-               'currentVideo'
+            'imgBaseUrl',
+            'currentVideo',
+            'status',
+            'defence',
+            'isEncrypt',
+            'alarmSoundMode',
+            'offlineNotify',
            ]
                
            )

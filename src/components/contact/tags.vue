@@ -5,7 +5,7 @@
             <!--<div class="other"><span>添加朋友</span></div>-->
             <div class="center">
                 <router-link to="/contact" tag="div" class="iconfont icon-return-arrow">
-                    <span>物联网</span>
+                    <span>云设备</span>
                 </router-link>
                 <span>标签</span>
             </div>

@@ -11,10 +11,10 @@
         </header>
         <section>
             <div class="clearfix">
-                <div class="header"><img src="https://sinacloud.net/vue-wechat/images/headers/header01.png" alt="" style="width:40px"></div>
+                <div class="header"><img src="http://p5iqmly4z.bkt.clouddn.com/superman.jpeg" alt="" style="width:40px"></div>
                 <div class="info">
-                    <p><span>阿荡</span><span class="gender gender-male"></span></p>
-                    <span>江苏 苏州</span>
+                    <p><span></span><span class="gender gender-male"></span></p>
+                    <span>浙江 杭州</span>
                 </div>
             </div>
             <div id="qrcode-pic" class="clearfix"></div>
@@ -60,7 +60,7 @@
     }
     
     .qrcode #qrcode-pic {
-        background: url("https://sinacloud.net/vue-wechat/images/qrcode.jpg");
+        background: url("http://p5iqmly4z.bkt.clouddn.com/qrcode.jpeg");
         background-size: 100% 100%;
         width: 300px;
         height: 300px;

@@ -15,7 +15,7 @@
                     <p>头像</p>
                 </div>
                 <div class="weui-cell__ft">
-                    <img src="http://p5iqmly4z.bkt.clouddn.com/avatar.jpeg" style="width: 50px;height: 50px;border-radius: 4px;">
+                    <img src="http://p5iqmly4z.bkt.clouddn.com/superman.jpeg" style="width: 50px;height: 50px;border-radius: 4px;">
                 </div>
             </div>
             <div class="weui-cell">
@@ -23,7 +23,7 @@
                     <p>名字</p>
                 </div>
                 <div class="weui-cell__ft">
-                    阿荡
+                    王金亮
                 </div>
             </div>
             <div class="weui-cell">
@@ -31,7 +31,7 @@
                     <p>微信号</p>
                 </div>
                 <div class="weui-cell__ft">
-                    10086
+                    18810889083
                 </div>
             </div>
             <router-link to="/self/profile/my-qrcode" class="weui-cell weui-cell_access">
@@ -66,7 +66,7 @@
                     <p>地区</p>
                 </div>
                 <div class="weui-cell__ft">
-                    奥地利 维也纳
+                    中国 浙江 杭州
                 </div>
             </div>
             <div class="weui-cell">

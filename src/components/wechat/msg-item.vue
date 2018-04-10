@@ -11,7 +11,7 @@
                 <i class="new-msg-dot" v-show="!read&&item.quiet"></i>
                 <!--如果是私聊，只显示一个头像； 如果是群聊，则显示多个头像，flex 控制样式-->
                 <div class="header" :class="[item.type=='group'?'multi-header':'']">
-                    <img v-for="userInfo in item.user" :src="userInfo.headerUrl">
+                    <img v-for="userInfo in item.user" :src= 'userInfo.headerUrl'>
                 </div>
             </div>
             <div class="desc-box">
@@ -77,7 +77,7 @@
         },
 
          mounted: function() {
-                console.group('------mounted 挂载结束状态------');
+                // console.group('------mounted 挂载结束状态------');
                //console.log("mounted:"+this.$store.state.allContacts[0].src) ;
                //let src=this.$store.state.allContacts[this.mid-1].src;
                //console.log("mid:"+this.mid+"---src:"+src);

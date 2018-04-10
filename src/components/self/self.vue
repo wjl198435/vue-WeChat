@@ -5,12 +5,12 @@
       <div class="weui-cells">
         <router-link to="/self/profile" class="weui-cell weui-cell_access">
           <div class="weui-cell__hd">
-            <img src="http://p5iqmly4z.bkt.clouddn.com/avatar.jpeg" alt="" class="self-header">
+            <img src="http://p5iqmly4z.bkt.clouddn.com/superman.jpeg" alt="" class="self-header">
           </div>
           <div class="weui-cell__bd">
-            <h4 class="self-nickname">我是农民</h4>
+            <h4 class="self-nickname">我是农户</h4>
 
-            <p class="self-wxid">账号: zhaohd</p>
+            <p class="self-wxid">账号: 安心农业</p>
           </div>
           <div class="weui-cell__ft">
             <img src="../../assets/images/chat-info-qr.png">

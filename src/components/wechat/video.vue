@@ -191,7 +191,7 @@ export default {
    *
    * */
   mounted: function() {
-    console.group("------mounted 挂载结束状态------");
+    // console.group("------mounted 挂载结束状态------");
     //console.log("mounted:"+this.$store.state.allContacts[0].src) ;
     //let src=this.$store.state.allContacts[this.mid-1].src;
     //console.log("mid:"+this.mid+"---src:"+src);

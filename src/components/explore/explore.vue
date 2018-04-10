@@ -56,7 +56,8 @@
       </div>-->
 
       <div class="weui-cells">
-        <a href="http://wq.jd.com" class="weui-cell weui-cell_access">
+        <!-- <a href="http://wq.jd.com" class="weui-cell weui-cell_access"> -->
+          <a href="#;" class="weui-cell weui-cell_access">
           <div class="weui-cell__hd">
             <img src="../../assets/images/find_icon-shopping.png">
           </div>

@@ -147,6 +147,8 @@ export default {
     return data
   },
 
+ 
+
   async fetchUserAndOrders ({ state }) {
     const res = await Services.fetchUserAndOrders()
 
@@ -163,12 +165,29 @@ export default {
     return res
   },
 
+  async  fetchLiveAddress({ state },deviceSerial,channelNo){
+    //console.log("actions->getLiveAddress",deviceSerial,channelNo)
+    if(deviceSerial===state.currentLive.deviceSerial && channelNo===state.currentLive.channelNo )return
+    //state.currentLive={};
+    const res = await Services.fetchLiveAddress(deviceSerial,channelNo)
+    
+    if(res.data.success ){
+        state.currentLive=res.data.data.data
+        //console.log("actions->getLiveAddress:state.currentLive",JSON.stringify(state.currentLive))
+    }
+
+    return res
+},
+
   async fetchVideoInfo ({ state },_id) {
-     console.log("actions->fetchVideoInfo")
+     console.log("actions->fetchVideoInfo-->id:",_id)
+     if(_id===state.currentVideoInfo.deviceSerial  || _id===null)return
      const res = await Services.fetchVideoeInfo(_id)
-     state.currentVideo = res.data.data.data
+     state.currentVideoInfo = res.data.data.data
    
-    console.log("state.fetchVideoInfo:"+JSON.stringify(state.currentVideo))
+    //console.log("state.fetchVideoInfo:"+JSON.stringify(state.currentVideoInfo))
     return res
   }
+
+  
 }

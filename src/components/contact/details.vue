@@ -14,9 +14,9 @@
                 <!-- <span>{{currentVideo}}</span> -->
                 <div class="weui-cell__bd">
                     <!-- <h4 class="self-nickname">{{userInfo.nickname}}<span class="gender" :class="[userInfo.sex===1?'gender-male':'gender-female']"></span></h4> -->
-                    <h4 class="self-nickname">{{currentVideo.deviceName}} &nbsp;<span :class="[currentVideo.status?'iconfont icon-online':'iconfont icon-offline']" ></span></h4>
-                    <p class="self-wxid" style="font-size: 13px;color: #999;">序列号: {{currentVideo.deviceSerial}}</p>
-                    <p class="nickname" style="font-size: 13px;color: #999;">型号:{{currentVideo.model||'无'}}</p>
+                    <h4 class="self-nickname">{{currentVideoInfo.deviceName}} &nbsp;<span :class="[currentVideoInfo.status?'iconfont icon-online':'iconfont icon-offline']" ></span></h4>
+                    <p class="self-wxid" style="font-size: 13px;color: #999;">序列号: {{currentVideoInfo.deviceSerial}}</p>
+                    <p class="nickname" style="font-size: 13px;color: #999;">型号:{{currentVideoInfo.model||'无'}}</p>
                 </div>
             </div>
         </div>
@@ -37,16 +37,16 @@
                 </div>
                 <div class="weui-cell__ft" style="-webkit-flex: 4;text-align: left;">
                      <!-- <span v-for="item in userInfo.area">{{item}}&nbsp;&nbsp;&nbsp;</span>  -->
-                     <span>{{status[currentVideo.status]}}&nbsp;</span>
-                     <span>{{defence[currentVideo.defence]}}&nbsp;</span>
-                     <span>{{isEncrypt[currentVideo.isEncrypt]}}&nbsp;</span>
-                     <span>{{alarmSoundMode[currentVideo.alarmSoundMode]}}&nbsp;</span>
-                     <span>{{offlineNotify[currentVideo.offlineNotify]}}&nbsp;</span>
+                     <span>{{status[currentVideoInfo.status]}}&nbsp;</span>
+                     <span>{{defence[currentVideoInfo.defence]}}&nbsp;</span>
+                     <span>{{isEncrypt[currentVideoInfo.isEncrypt]}}&nbsp;</span>
+                     <span>{{alarmSoundMode[currentVideoInfo.alarmSoundMode]}}&nbsp;</span>
+                     <span>{{offlineNotify[currentVideoInfo.offlineNotify]}}&nbsp;</span>
                 </div>
             </div>
             <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">
-                    <p>抓拍照片</p>
+                    <p>照片</p>
                 </div>
                 <div class="weui-cell__ft" style="-webkit-flex: 4;text-align: left;">
                     <div class="album-list">
@@ -67,7 +67,7 @@
          <div >
              
             <!-- <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">发命令</span> -->
-            <router-link :to="{path:'/wechat/video',query: {wx_id}}" tag="span"    >
+            <router-link :to="{path:'/wechat/video',query: {deviceSerial}}" tag="span"    >
             <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">直播</span>
             </router-link>
 
@@ -85,42 +85,52 @@
     </div>
 </template>
 <script>
-    import {mapState} from 'vuex'
-    import contact from "../../vuex/contacts"
-    export default {
-        data() {
-            return {
-                
-                pageName: "",
-                wx_id:this.$route.query.wxid
-            }
-        },
-        computed: {
-           
-           ...mapState([
-            'imgBaseUrl',
-            'currentVideo',
-            'status',
-            'defence',
-            'isEncrypt',
-            'alarmSoundMode',
-            'offlineNotify',
-           ]
-               
-           )
-            // userInfo() {
-            //     return contact.getUserInfo(this.$route.query.wxid)
-            // }
-        },
-         
-         async mounted()  {
-          console.log("details--> created! wx_id:",this.wx_id)
-          
-          await this.$store.dispatch('fetchVideoInfo',{
-              deviceSerial:this.wx_id
-              })
-        },
-    }
+import { mapState } from "vuex";
+import contact from "../../vuex/contacts";
+export default {
+  data() {
+    return {
+      currentLive: {},
+      pageName: "",
+      deviceSerial: this.$route.query.wxid
+    };
+  },
+  computed: {
+    ...mapState([
+      "imgBaseUrl",
+      "currentVideoInfo",
+      "status",
+      "defence",
+      "isEncrypt",
+      "alarmSoundMode",
+      "offlineNotify"
+    ])
+    // userInfo() {
+    //     return contact.getUserInfo(this.$route.query.wxid)
+    // }
+  },
+
+  async mounted() {
+    console.log("details--> created! wx_id:", this.deviceSerial);
+
+    await this.$store.dispatch("fetchVideoInfo", {
+      deviceSerial: this.deviceSerial
+    });
+
+    const res = await this.$store.dispatch("fetchLiveAddress", {
+      deviceSerial: this.deviceSerial,
+      channelNo: 1
+    });
+
+    if (res.data.success) {
+      this.currentLive = res.data.data.data;
+
+      console.log(JSON.stringify(this.currentLive))
+   }
+
+    
+  }
+};
 </script>
 <style>
 

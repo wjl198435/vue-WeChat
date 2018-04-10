@@ -65,9 +65,19 @@ class Services {
   }
 
   fetchVideoeInfo({deviceSerial}){
-    console.log("services->fetchVideoInfo ")
+    //console.log("services->fetchVideoInfo ")
+   
     return axios.post('/ys7/selectDeviceInfo',{
         deviceSerial
+    })
+  }
+
+  fetchLiveAddress({deviceSerial,channelNo}){
+    let source=deviceSerial+":"+channelNo;
+    //console.log("services->fetchLiveAddress ","source:"+source)
+   
+    return axios.post('/ys7/getLiveAddress',{
+        source 
     })
   }
 }

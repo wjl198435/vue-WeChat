@@ -22,12 +22,21 @@ const state = {
     alarmSoundMode:['短叫','长叫','静音'],
     offlineNotify:['不通知','通知'],
     videoList:[],
-    currentVideo:{},
     sensorList:{},
     switchList:{},
     arlamList:{},
 
-
+    currentVideoInfo:{},
+    currentLive:{},
+    // currentDeviceSerial:0,
+    // currentLiveHLS:"",
+    // currentLiveHLS_HD:"",
+    // currentLiveRTMP:"",
+    // currentLiveRTMP_HD:"",
+    currentLiveStatusMsg:["未使用或直播已关闭" ,"使用中","已过期","直播已暂停"],
+    // currentStatus:0,
+    currentLiveexceptionMsg:["正常","设备不在线","设备开启视频加密","设备删除","失效","未绑定","账户下流量已超出"],
+    // currentLiveexception:0,
 
     allContacts: contact.contacts, //所有联系人
     OfficialAccounts: OfficialAccounts, //所有关注的公众号

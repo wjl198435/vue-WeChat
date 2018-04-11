@@ -70,9 +70,7 @@
             <router-link :to="{path:'/wechat/video',query: {deviceSerial}}" tag="span"    >
             <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">直播</span>
             </router-link>
-
-             <a href="https://open.ys7.com/view/h5/e364754d10cc40408dcde63f6646fb28" class="weui-btn weui-btn_default" style="width:90% ;margin-top:20px;">备用直播</a>
-          
+             <a href="https://open.ys7.com/view/h5/e364754d10cc40408dcde63f6646fb28" class="weui-btn weui-btn_default" style="width:90% ;margin-top:20px;">分享直播</a>
         </div>
 
         
@@ -90,9 +88,9 @@ import contact from "../../vuex/contacts";
 export default {
   data() {
     return {
-      currentLive: {},
+      
       pageName: "",
-      deviceSerial: this.$route.query.wxid
+      deviceSerial: this.$route.query.deviceSerial
     };
   },
   computed: {
@@ -111,22 +109,19 @@ export default {
   },
 
   async mounted() {
-    console.log("details--> created! wx_id:", this.deviceSerial);
-
-    await this.$store.dispatch("fetchVideoInfo", {
+    
+    if(this.deviceSerial===null ||this.deviceSerial===this.currentVideoInfo.deviceSerial) return 
+   
+        await this.$store.dispatch("fetchVideoInfo", {
       deviceSerial: this.deviceSerial
     });
-
+   
     const res = await this.$store.dispatch("fetchLiveAddress", {
       deviceSerial: this.deviceSerial,
       channelNo: 1
     });
 
-    if (res.data.success) {
-      this.currentLive = res.data.data.data;
-
-      console.log(JSON.stringify(this.currentLive))
-   }
+   
 
     
   }

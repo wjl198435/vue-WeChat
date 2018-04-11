@@ -2,7 +2,7 @@
   <div class="liveView">
     <header id="wx-header">
             <div class="center">
-                <router-link to="/contact/details" tag="div" class="iconfont icon-return-arrow">
+                <router-link :to="{path:'/contact/details',query: {deviceSerial:qDeviceSerial}}" tag="div" class="iconfont icon-return-arrow">
                     <span>详细资料</span>
                 </router-link>
                 <span>{{pageName}}</span>
@@ -38,6 +38,7 @@ export default {
   mixins: [window.mixin],
   data() {
     return {
+      qDeviceSerial:this.$route.query.deviceSerial,
       pageName: "直播",
       initialized: false,
       currentTech: "",
@@ -76,7 +77,8 @@ export default {
 
   computed: {
     ...mapState({
-      currentLive: state => state.currentLive
+       currentLive: state => state.currentLive,
+       deviceSerial: state => state.currentLive.deviceSerial
     }),
 
     player() {

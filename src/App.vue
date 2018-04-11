@@ -6,9 +6,9 @@
             <header class="app-header" :class="{'header-hide':!$store.state.headerStatus}">
                 <wx-header :pageName="pageName"></wx-header>
             </header>
-            <!--搜索框 只在“微信”和“通讯录”页面下显示-->
+            <!--搜索框 只在“海哇”和“通讯录”页面下显示-->
             <search v-show="$route.path.indexOf('explore')===-1&&$route.path.indexOf('self')===-1"></search>
-            <!--四个门面页 “微信” “通讯录” “发现” “我”-->
+            <!--四个门面页 “海哇” “通讯录” “发现” “我”-->
             <section class="app-content">
                 <keep-alive>
                     <router-view name="default" ></router-view>
@@ -85,7 +85,7 @@
     /*过渡效果需要的动画库*/
     
     @import "assets/css/lib/animate.css";
-    /*weui 样式库 非常适合高仿微信*/
+    /*weui 样式库 非常适合高仿海哇*/
     
     @import "assets/css/lib/weui.min.css";
 </style>

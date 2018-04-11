@@ -1,5 +1,5 @@
 <template>
-    <!--微信组件-->
+    <!--海哇组件-->
   <div id="wechat">
       
     <ul class="wechat-list">

@@ -28,7 +28,7 @@
             </div>
             <div class="weui-cell">
                 <div class="weui-cell__bd">
-                    <p>微信号</p>
+                    <p>海哇号</p>
                 </div>
                 <div class="weui-cell__ft">
                     18810889083

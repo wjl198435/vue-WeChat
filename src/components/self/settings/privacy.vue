@@ -19,17 +19,17 @@
             </div>
             <div class="weui-cells">
                 <div class="weui-cell weui-cell_switch">
-                    <div class="weui-cell__bd">通过微信号搜索到我</div>
+                    <div class="weui-cell__bd">通过海哇号搜索到我</div>
                     <div class="weui-cell__ft"><input type="checkbox" class="weui-switch" checked=""></div>
                 </div>
             </div>
             <div class="weui-cells">
                 <div class="weui-cell weui-cell_switch">
-                    <div class="weui-cell__bd">通过微信号搜索到我</div>
+                    <div class="weui-cell__bd">通过海哇号搜索到我</div>
                     <div class="weui-cell__ft"><input type="checkbox" class="weui-switch" checked=""></div>
                 </div>
             </div>
-            <div class="weui-cells__tips">关闭后, 其他用户将不能通过微信号搜索到你</div>
+            <div class="weui-cells__tips">关闭后, 其他用户将不能通过海哇号搜索到你</div>
             <div class="weui-cells">
                 <div class="weui-cell">
                     <div class="weui-cell__bd">通讯录黑名单</div>

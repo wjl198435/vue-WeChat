@@ -1,5 +1,5 @@
 /**
- * wxid-微信id
+ * wxid-海哇id
  * initial-姓名首字母
  * headerUrl-头像地址
  * nickname-昵称

@@ -31,12 +31,12 @@
                 </router-link>
             </div>
             <div class="weui-cells">
-                <a class="weui-cell weui-cell_access" href="https://kf.qq.com/touch/product/wechat_app.html?platform=15&amp;scene_id=kf338">
+                <a class="weui-cell weui-cell_access" href="javascript:void(0);">
                     <div class="weui-cell__bd">帮助与反馈</div>
                     <div class="weui-cell__ft"></div>
                 </a>
                 <div class="weui-cell weui-cell_access">
-                    <div class="weui-cell__bd">关于微信</div>
+                    <div class="weui-cell__bd">关于海哇</div>
                     <div class="weui-cell__ft"></div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
   <div id="wx-header">
     <!--右上角图标-->
     <div class="other">
-      <!--只在“微信”页显示 更多图标-->
+      <!--只在“海哇”页显示 更多图标-->
       <span class="iconfont icon-tips-jia" v-show="$route.path==='/'" v-on:click="$store.commit('toggleTipsStatus')"></span>
       <!--只在“通讯录”页显示 显示添加好友图标-->
       <router-link tag="span" to="/contact/add-friend" class="iconfont icon-search-add" v-show="$route.path==='/contact'"></router-link>
@@ -36,7 +36,7 @@
       </transition>-->
       <!--显示当前页的名字-->
       <span>{{$store.state.currentPageName}}</span>
-      <!--微信群 显示群名以及成员人数 好像和 dialogue 组件 写重了 sad -->
+      <!--海哇群 显示群名以及成员人数 好像和 dialogue 组件 写重了 sad -->
       <span class="parentheses" v-show='$route.query.group_num&&$route.query.group_num!=1'>{{$route.query.group_num}}</span>
     </div>
   </div>

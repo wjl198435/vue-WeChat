@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div id="qrcode-pic" class="clearfix"></div>
-            <p class="desc">扫一扫上面的二维码图案，加我微信</p>
+            <p class="desc">扫一扫上面的二维码图案，加我海哇</p>
         </section>
     </div>
 </template>

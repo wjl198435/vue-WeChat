@@ -18,7 +18,7 @@ const mutations = {
     toggleHeaderStatus(state, status) {
         state.headerStatus = status
     },
-    //切换“微信”页中右上角菜单
+    //切换“海哇”页中右上角菜单
     toggleTipsStatus(state, status) {
         if (status == -1) {
             state.tipsStatus = false

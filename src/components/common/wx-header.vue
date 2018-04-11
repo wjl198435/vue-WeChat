@@ -35,7 +35,7 @@
           <div class="iconfont icon-return-arrow" style="left: 10px;position: absolute;font-size: 16px;" v-on:click="goBack" v-show="$route.path.split('/').length>2"><span>{{$store.state.backPageName}}</span></div> 
       </transition>-->
       <!--显示当前页的名字-->
-      <span>{{$store.state.currentPageName}}</span>
+      <span >{{$store.state.currentPageName}}</span>
       <!--海哇群 显示群名以及成员人数 好像和 dialogue 组件 写重了 sad -->
       <span class="parentheses" v-show='$route.query.group_num&&$route.query.group_num!=1'>{{$route.query.group_num}}</span>
     </div>

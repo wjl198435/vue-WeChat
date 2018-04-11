@@ -6,14 +6,14 @@
                 <div class="iconfont icon-return-arrow" v-on:click="$router.back()">
                     <span>返回</span>
                 </div>
-                <span>聊天详情</span>
+                <span>消息详情</span>
             </div>
         </header>
         <div class="member">
             <ul class="chat-dialogue-entry-collect">
                 <li v-for="item in $route.query.msgInfo.user">
                     <div><img :src="item.headerUrl"></div>
-                    <p>{{item.remark||item.nickname}}</p> 
+                    <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{item.remark||item.nickname}}</p> 
                 </li>
                 <li>
                     <div><span class="iconfont icon-chat-detail-add"></span></div>
@@ -30,31 +30,31 @@
                 <div class="weui-cell__ft"><input type="checkbox" class="weui-switch"v-model="$route.query.msgInfo.quiet"></div>
             </div>
         </div>
-        <div class="weui-cells">
+        <!-- <div class="weui-cells">
             <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">聊天文件</div>
                 <div class="weui-cell__ft"></div>
             </div>
-        </div>
+        </div> -->
         <div class="weui-cells">
-            <div class="weui-cell weui-cell_access">
+            <!-- <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">设置当前聊天背景</div>
                 <div class="weui-cell__ft"></div>
-            </div>
+            </div> -->
             <div class="weui-cell weui-cell_access">
-                <div class="weui-cell__bd">查找聊天内容</div>
+                <div class="weui-cell__bd">查找消息内容</div>
                 <div class="weui-cell__ft"></div>
             </div>
         </div>
         <div class="weui-cells">
             <div class="weui-cell">
-                <div class="weui-cell__bd">清空聊天记录</div>
+                <div class="weui-cell__bd">清空消息记录</div>
                 <div class="weui-cell__ft"></div>
             </div>
         </div>
         <div class="weui-cells">
             <div class="weui-cell weui-cell_access">
-                <div class="weui-cell__bd">投诉</div>
+                <div class="weui-cell__bd">维护</div>
                 <div class="weui-cell__ft"></div>
             </div>
         </div>

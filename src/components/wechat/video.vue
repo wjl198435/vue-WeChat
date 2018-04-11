@@ -35,6 +35,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { mapGetters } from 'vuex'
 import contact from "../../vuex/contacts";
 import { Toast } from 'vux'
 export default {
@@ -87,9 +88,12 @@ export default {
 
   computed: {
     ...mapState({
-       showToast:state => !state.currentLive[0].status,
        currentLive: state => state.currentLive,
        deviceSerial: state => state.currentLive.deviceSerial
+    }),
+
+    ...mapGetters({
+      showToast: 'isShowToast',
     }),
 
     player() {
@@ -113,7 +117,7 @@ export default {
     },
 
     onPlayerReadied(player) {
-      console.log("the player is readied",JSON.stringify(player));
+      //console.log("the player is readied",JSON.stringify(player));
       if (!this.initialized) {
         this.initialized = true;
         this.currentTech = this.player.techName_;
@@ -126,8 +130,8 @@ export default {
       //console.log("currentTime", e.cache_.currentTime);
     },
     enterStream() {
-      console.log("enterStream", this.currentLive[0].status)
-      if(this.currentLive[0].status!==1){
+      
+      if( !this.currentLive &&this.currentLive.length<1 &&this.currentLive[0].status!==1){
         this.playerOptions.autoplay = false;
         return;
       }
@@ -155,12 +159,18 @@ export default {
    * */
   mounted: function() {
    
-   if(this.currentLive[0].status!==1){
+   console.log("mounted:"+JSON.stringify(this.currentLive)) 
+   if(!this.currentLive && this.currentLive.length<1 && this.currentLive[0].status!==1){
      this.playerOptions.autoplay = false;
      return;
+   }else{
+     if(this.currentLive[0]!==null){
+        this.playerOptions.sources[0].src = this.currentLive[0].hls;
+        console.log("mounted", this.currentLive[0].state)
+     }
+       
    }
-   this.playerOptions.sources[0].src = this.currentLive[0].hls;
-  console.log("mounted", this.currentLive[0].state)
+    
  }
  
 };

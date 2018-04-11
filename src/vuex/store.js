@@ -5,7 +5,7 @@ import OfficialAccounts from "./official-account" //存放所有关注的公众�
 import contact from './contacts' //存放所有联系人的数据
 import mutations from "./mutations"
 import actions from "./actions"
-import getters from "./getters"
+import * as getters  from "./getters"
 import {imgBaseUrl} from '@/config/env'
 Vue.use(Vuex)
     // 统一管理接口域名 

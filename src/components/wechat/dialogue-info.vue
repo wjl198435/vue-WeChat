@@ -6,14 +6,14 @@
                 <div class="iconfont icon-return-arrow" v-on:click="$router.back()">
                     <span>返回</span>
                 </div>
-                <span>聊天信息({{$route.query.msgInfo.user.length}})</span>
+                <span>集群信息({{$route.query.msgInfo.user.length}})</span>
             </div>
         </header>
         <div class="member">
             <ul class="chat-dialogue-entry-collect">
                 <li v-for="item in $route.query.msgInfo.user">
                     <div><img :src="item.headerUrl"></div>
-                    <p>{{item.remark||item.nickname}}</p>
+                    <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{item.remark||item.nickname}}</p>
                 </li>
                 <li>
                     <div><span class="iconfont icon-chat-detail-add"></span></div>
@@ -22,7 +22,7 @@
         </div>
         <div class="weui-cells">
             <div class="weui-cell weui-cell_access">
-                <div class="weui-cell__bd">群聊名称</div>
+                <div class="weui-cell__bd">集群名称</div>
                 <div class="weui-cell__ft">{{$route.query.msgInfo.group_name}}</div>
             </div>
             <div class="weui-cell weui-cell_access">
@@ -43,47 +43,47 @@
                 <div class="weui-cell__bd">置顶聊天</div>
                 <div class="weui-cell__ft"><input type="checkbox" class="weui-switch"></div>
             </div>
-            <div class="weui-cell weui-cell_switch">
+            <!-- <div class="weui-cell weui-cell_switch">
                 <div class="weui-cell__bd">保存到通讯录</div>
                 <div class="weui-cell__ft"><input type="checkbox" class="weui-switch"></div>
-            </div>
+            </div> -->
 
         </div>
         <div class="weui-cells">
-            <div class="weui-cell weui-cell_access">
+            <!-- <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">我在本群的昵称</div>
                 <div class="weui-cell__ft"></div>
-            </div>
+            </div> -->
             <div class="weui-cell weui-cell_switch">
                 <div class="weui-cell__bd">显示成员昵称</div>
                 <div class="weui-cell__ft"><input type="checkbox" class="weui-switch" v-model="showNickname"></div>
             </div>
         </div>
         <div class="weui-cells">
-            <div class="weui-cell weui-cell_access">
+            <!-- <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">聊天文件</div>
                 <div class="weui-cell__ft"></div>
-            </div>
-            <div class="weui-cell weui-cell_access">
+            </div> -->
+            <!-- <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">查找聊天内容</div>
                 <div class="weui-cell__ft"></div>
-            </div>
-            <div class="weui-cell weui-cell_access">
+            </div> -->
+            <!-- <div class="weui-cell weui-cell_access">
                 <div class="weui-cell__bd">设置当前聊天背景</div>
                 <div class="weui-cell__ft"></div>
-            </div>
+            </div> -->
             <div class="weui-cell weui-cell_access">
-                <div class="weui-cell__bd">投诉</div>
+                <div class="weui-cell__bd">维修</div>
                 <div class="weui-cell__ft"></div>
             </div>
         </div>
         <div class="weui-cells">
             <div class="weui-cell">
-                <div class="weui-cell__bd">清空聊天记录</div>
+                <div class="weui-cell__bd">清空消息记录</div>
                 <div class="weui-cell__ft"></div>
             </div>
         </div>
-        <span class="weui-btn weui-btn_warn" style="margin-top: 15px;padding: 0 20px; width:90%;">删除并退出</span>
+        <!-- <span class="weui-btn weui-btn_warn" style="margin-top: 15px;padding: 0 20px; width:90%;">删除并退出</span> -->
     </div>
 </template>
 <script>

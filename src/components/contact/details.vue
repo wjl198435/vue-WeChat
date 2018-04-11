@@ -71,8 +71,12 @@
             </router-link>
              <!-- <a href="https://open.ys7.com/view/h5/e364754d10cc40408dcde63f6646fb28" class="weui-btn weui-btn_default" style="width:90% ;margin-top:20px;">分享直播{{H5Live}}</a> -->
         </div>
-
-        
+       
+        <!-- <div>
+            <group>
+                <cell title="title" value="value"></cell>
+            </group>
+        </div> -->
        
 
 
@@ -80,18 +84,28 @@
         <a href="javascript:;" class="weui-btn weui-btn_default" style="width:90%">视频</a> -->
         
     </div>
+
+
 </template>
 <script>
 import { mapState } from "vuex";
 import contact from "../../vuex/contacts";
+
+// import { Group, Cell } from 'vux'
+
 export default {
   data() {
     return {
-      
       pageName: "",
       deviceSerial: this.$route.query.deviceSerial
     };
   },
+
+//    components: {
+//     Group,
+//     Cell
+//   },
+
   computed: {
     ...mapState([
       "imgBaseUrl",
@@ -118,7 +132,10 @@ export default {
       channelNo: 1
     });
 
-   
+
+
+
+
 
     
   }

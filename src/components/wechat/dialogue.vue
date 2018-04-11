@@ -7,7 +7,7 @@
             </div>
             <div class="center">
                 <router-link to="/" tag="div" class="iconfont icon-return-arrow">
-                    <span>云设备</span>
+                    <span>云服务</span>
                 </router-link>
                 <span>{{pageName}}</span>
                 <span class="parentheses" v-show='$route.query.group_num&&$route.query.group_num!=1'>{{$route.query.group_num}}</span>

@@ -4,9 +4,9 @@
         <header id="wx-header">
             <div class="center">
                 <router-link to="/contact" tag="div" class="iconfont icon-return-arrow">
-                    <span>通讯录</span>
+                    <span>云服务</span>
                 </router-link>
-                <span>公众号</span>
+                <span>基础服务</span>
             </div>
         </header>
          <!--这里的 search 组件的样式也需要修改一下-->

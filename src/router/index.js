@@ -57,7 +57,7 @@ const routes = [{
     },
     {
         path: '/contact',
-        name: "云设备",
+        name: "云服务",
         component: resolve => require(["../components/contact/contact.vue"], resolve)
     },
     {

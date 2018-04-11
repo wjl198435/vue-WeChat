@@ -22,7 +22,7 @@
             <a class="weui-cell weui-cell_access">
                 <div class="weui-cell__hd"><img src="../../assets/images/contact_add-friend-reda.png" alt=""></div>
                 <div class="weui-cell__bd">
-                    <p>广播加云设备</p>
+                    <p>广播加云服务</p>
                     <p>扫描同一局域网设备</p>
                 </div>
                 <div class="weui-cell__ft"></div>

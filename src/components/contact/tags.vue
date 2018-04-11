@@ -5,7 +5,7 @@
             <!--<div class="other"><span>添加朋友</span></div>-->
             <div class="center">
                 <router-link to="/contact" tag="div" class="iconfont icon-return-arrow">
-                    <span>云设备</span>
+                    <span>云服务</span>
                 </router-link>
                 <span>标签</span>
             </div>
@@ -23,12 +23,17 @@
         <div class="weui-cells">
             <div class="weui-cell">
                 <div class="weui-cell__bd">
-                    <p>女朋友(0)</p>
+                    <p>猪肉价格走势(4)</p>
                 </div>
             </div>
             <div class="weui-cell">
                 <div class="weui-cell__bd">
-                    <p>基友(999+)</p>
+                    <p>蔬菜价格走势(10)</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>行业新闻(8)</p>
                 </div>
             </div>
         </div>

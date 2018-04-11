@@ -11,7 +11,7 @@
             <dt class="iconfont icon-iot1" >
                 <!--<i class="new-msg-count">2</i>-->
             </dt>
-            <dd>云设备</dd>
+            <dd>云服务</dd>
         </router-link>
 		<router-link to="/explore" tag="dl">
             <dt class="iconfont icon-find" >

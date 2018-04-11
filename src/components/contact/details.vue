@@ -3,7 +3,7 @@
         <header id="wx-header">
             <div class="center">
                 <router-link to="/contact" tag="div" class="iconfont icon-return-arrow">
-                    <span>云设备</span>
+                    <span>云服务</span>
                 </router-link>
                 <span>详细资料</span>
             </div>

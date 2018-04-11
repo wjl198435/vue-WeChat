@@ -3,15 +3,15 @@
         <section>
             <div class="weui-cells_contact-head weui-cells weui-cells_access" style="margin-top:-1px">
                 <router-link to="/contact/new-friends" class="weui-cell">
-                    <div class="weui-cell_hd"> <img class="img-obj-cover" src="../../assets/images/contact_top-friend-notify.png"> </div>
+                    <div class="weui-cell_hd"> <img class="img-obj-cover" src="../../assets/images/device-setup.jpeg"> </div>
                     <div class="weui-cell_bd weui-cell_primary">
                         <p>新的设备</p>
                     </div>
                 </router-link>
                 <router-link to="/contact/group-list" class="weui-cell">
-                    <div class="weui-cell_hd"> <img class="img-obj-cover" src="../../assets/images/contact_top-addgroup.png"> </div>
+                    <div class="weui-cell_hd"> <img class="img-obj-cover" src="../../assets/images/device-manage.jpeg"> </div>
                     <div class="weui-cell_bd weui-cell_primary">
-                        <p>设备群</p>
+                        <p>设备管理</p>
                     </div>
                 </router-link>
                 <router-link to="/contact/tags" class="weui-cell">
@@ -21,9 +21,9 @@
                     </div>
                 </router-link>
                 <router-link to="/contact/official-accounts" class="weui-cell">
-                    <div class="weui-cell_hd"><img class="img-obj-cover" src="../../assets/images/contact_top-offical.png"></div>
+                    <div class="weui-cell_hd"><img class="img-obj-cover" src="../../assets/images/base-server.jpeg"></div>
                     <div class="weui-cell_bd weui-cell_primary">
-                        <p>机器人</p>
+                        <p>基础服务</p>
                     </div>
                 </router-link>
             </div>
@@ -65,7 +65,7 @@ export default {
   mixins: [window.mixin],
   data() {
     return {
-      pageName: "云设备"
+      pageName: "云服务"
     };
   },
   async created() {

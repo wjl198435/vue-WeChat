@@ -59,7 +59,6 @@
                     <p>更多</p>
                 </div>
                 <div class="weui-cell__ft">
-
                 </div>
             </div>
         </div>
@@ -70,7 +69,7 @@
             <router-link :to="{path:'/wechat/video',query: {deviceSerial}}" tag="span"    >
             <span class="weui-btn weui-btn_primary" style="width:90%;margin-top:20px;">直播</span>
             </router-link>
-             <a href="https://open.ys7.com/view/h5/e364754d10cc40408dcde63f6646fb28" class="weui-btn weui-btn_default" style="width:90% ;margin-top:20px;">分享直播</a>
+             <!-- <a href="https://open.ys7.com/view/h5/e364754d10cc40408dcde63f6646fb28" class="weui-btn weui-btn_default" style="width:90% ;margin-top:20px;">分享直播{{H5Live}}</a> -->
         </div>
 
         
@@ -102,10 +101,8 @@ export default {
       "isEncrypt",
       "alarmSoundMode",
       "offlineNotify"
-    ])
-    // userInfo() {
-    //     return contact.getUserInfo(this.$route.query.wxid)
-    // }
+    ]),
+
   },
 
   async mounted() {

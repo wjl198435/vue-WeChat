@@ -48,11 +48,12 @@ export default {
       },
       playerOptions: {
         overNative: true,
-        autoplay: false,
+        autoplay: true,
         controls: true,
         techOrder: ["html5"],
         sourceOrder: true,
         duration: 1,
+        language: "zh-CN",
 
         html5: { hls: { withCredentials: false } },
         sources: [
@@ -102,7 +103,12 @@ export default {
         this.currentTech = this.player.techName_;
         console.log("the player is readied");
       }
-      //this.enterStream()
+      // var modal = this.player.createModal('This is a modal!');
+      // modal.addClass('vjs-my-fancy-modal');
+      // modal.open()
+      
+      // this.player.notSupportedMessage="不支持设备"
+      console.log("create mode");
     },
     // record current time
     onTimeupdate(e) {
@@ -110,6 +116,8 @@ export default {
     },
     enterStream() {
       let player = this.$refs.videoPlayer.player;
+
+      
       player.paused();
       player.load();
       player.src(this.playerOptions.sources[0]);
@@ -124,6 +132,7 @@ export default {
         this.playerOptions.techOrder = ["flash"];
       }
       this.playerOptions.autoplay = true;
+       
     }
   },
   /**
@@ -131,6 +140,7 @@ export default {
    *
    * */
   mounted: function() {
+     
     console.log("currentLive:" + this.currentLive[0].hls);
     this.playerOptions.sources[0].src = this.currentLive[0].hls;
   }

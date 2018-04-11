@@ -14,13 +14,17 @@
     class="vjs-custom-skin" 
     ref="videoPlayer" 
     :options="playerOptions" 
-    @ready="onPlayerReadied" 
-    @timeupdate="onTimeupdate"
-    @error="onError" >
+    
+    @ready="onPlayerReadied($event)" 
+    @timeupdate="onTimeupdate($event)"
+    @error="onError($event)" >
     </video-player>
+
+    <toast v-model="showToast" position="middle" :value=true :time="5000" text="设备不在线" type="warn"></toast>
+
     <footer class="dialogue-footer">
       <div class="component-dialogue-bar-person">
-      <span class="iconfont icon-camera"  v-on:click="onTest" style="margin: 0 auto;"></span>
+      <span class="iconfont icon-camera"  v-on:click="onTest" style="margin: 0 auto;"> </span>
       <span class="iconfont icon-record"  v-on:click="onTest" style="margin: 0 auto;"></span>
       <span class="iconfont icon-replay"  v-on:click="enterStream" style="margin: 0 auto;"></span>
       <span class="iconfont icon-hk-quit"  v-on:click="onTest" style="margin: 0 auto;"></span> 
@@ -32,6 +36,7 @@
 <script>
 import { mapState } from "vuex";
 import contact from "../../vuex/contacts";
+import { Toast } from 'vux'
 export default {
   name: "live",
 
@@ -53,8 +58,8 @@ export default {
         techOrder: ["html5"],
         sourceOrder: true,
         duration: 1,
-        language: "zh-CN",
-
+        notSupportedMessage:"哎呀,设备不在线!",
+        
         html5: { hls: { withCredentials: false } },
         sources: [
           {
@@ -76,8 +81,13 @@ export default {
     };
   },
 
+  components:{
+   Toast
+  },
+
   computed: {
     ...mapState({
+       showToast:state => !state.currentLive[0].status,
        currentLive: state => state.currentLive,
        deviceSerial: state => state.currentLive.deviceSerial
     }),
@@ -90,34 +100,38 @@ export default {
     }
   },
   methods: {
-    onError() {
-      console.log("onError");
+      onError(player) {
+     // JSON.stringify(player)
+     // player.message="不兼容啊"
       setTimeout(() => {
         this.enterStream();
       }, 1000);
     },
-    onTest() {},
-    onPlayerReadied() {
+    
+    onTest(){
+     console.log("onTest");
+    },
+
+    onPlayerReadied(player) {
+      console.log("the player is readied",JSON.stringify(player));
       if (!this.initialized) {
         this.initialized = true;
         this.currentTech = this.player.techName_;
-        console.log("the player is readied");
+        //console.log("the player is readied");
       }
-      // var modal = this.player.createModal('This is a modal!');
-      // modal.addClass('vjs-my-fancy-modal');
-      // modal.open()
       
-      // this.player.notSupportedMessage="不支持设备"
-      console.log("create mode");
     },
     // record current time
     onTimeupdate(e) {
-      console.log("currentTime", e.cache_.currentTime);
+      //console.log("currentTime", e.cache_.currentTime);
     },
     enterStream() {
+      console.log("enterStream", this.currentLive[0].status)
+      if(this.currentLive[0].status!==1){
+        this.playerOptions.autoplay = false;
+        return;
+      }
       let player = this.$refs.videoPlayer.player;
-
-      
       player.paused();
       player.load();
       player.src(this.playerOptions.sources[0]);
@@ -140,10 +154,15 @@ export default {
    *
    * */
   mounted: function() {
-     
-    console.log("currentLive:" + this.currentLive[0].hls);
-    this.playerOptions.sources[0].src = this.currentLive[0].hls;
-  }
+   
+   if(this.currentLive[0].status!==1){
+     this.playerOptions.autoplay = false;
+     return;
+   }
+   this.playerOptions.sources[0].src = this.currentLive[0].hls;
+  console.log("mounted", this.currentLive[0].state)
+ }
+ 
 };
 </script>
 

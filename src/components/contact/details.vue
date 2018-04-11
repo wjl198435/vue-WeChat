@@ -132,12 +132,6 @@ export default {
       channelNo: 1
     });
 
-
-
-
-
-
-    
   }
 };
 </script>

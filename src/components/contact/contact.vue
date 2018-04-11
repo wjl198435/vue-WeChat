@@ -29,7 +29,7 @@
             </div>
             
             <!--联系人集合-->
-            <template   >
+            <template>
                 
                 <div v-if="videoList.length>0"  class="weui-cells__title">视频</div>
                 <div   class="weui-cells" >
@@ -51,9 +51,7 @@
                         </ul>
                     </router-link> 
                 </div>
-            </template>
-                
-
+            </template>             
 </section>
 <!--检索-->
 <!-- <div class="initial-bar">
@@ -62,49 +60,44 @@
 </div>
 </template>
 <script>
-  import { mapState } from 'vuex'
-    export default {
-        mixins: [window.mixin],
-        data() {
-            return {
-                "pageName": "云设备"
-            }
-        },
-        async created () {
-            console.log("contact--> created!")
-          await this.$store.dispatch('fetchVideoes')
-        },
-        mounted() {
-            // mutations.js中有介绍
-            this.$store.commit("toggleTipsStatus", -1)
-            
-        },
-        activated() {
-            this.$store.commit("toggleTipsStatus", -1)
-        },
-        computed: {
-             
-            ...mapState(
-                [ 
-                    'imgBaseUrl',
-                    'videoList',
-                    'sensorList',
-                    'switchList',
-                    'arlamList',
-                ]
-            )
-
-        },
-        mounted() {
-            //console.log("mounted videoList:"+JSON.stringify())
-        },
-        methods: {
-            toPs(i){
-                window.scrollTo(0,this.$refs['key_'+i][0].offsetTop)
-            }
-        }
+import { mapState } from "vuex";
+export default {
+  mixins: [window.mixin],
+  data() {
+    return {
+      pageName: "云设备"
+    };
+  },
+  async created() {
+    console.log("contact--> created!");
+    await this.$store.dispatch("fetchVideoes");
+  },
+  mounted() {
+    // mutations.js中有介绍
+    this.$store.commit("toggleTipsStatus", -1);
+  },
+  activated() {
+    this.$store.commit("toggleTipsStatus", -1);
+  },
+  computed: {
+    ...mapState([
+      "imgBaseUrl",
+      "videoList",
+      "sensorList",
+      "switchList",
+      "arlamList"
+    ])
+  },
+  mounted() {
+    //console.log("mounted videoList:"+JSON.stringify())
+  },
+  methods: {
+    toPs(i) {
+      window.scrollTo(0, this.$refs["key_" + i][0].offsetTop);
     }
+  }
+};
 </script>
 <style>
-    @import "../../assets/css/contact.css";
+@import "../../assets/css/contact.css";
 </style>

@@ -7,7 +7,7 @@
             </div>
             <div class="center">
                 <router-link to="/" tag="div" class="iconfont icon-return-arrow">
-                    <span>设备</span>
+                    <span>云设备</span>
                 </router-link>
                 <span>{{pageName}}</span>
                 <span class="parentheses" v-show='$route.query.group_num&&$route.query.group_num!=1'>{{$route.query.group_num}}</span>
@@ -57,12 +57,12 @@
                 </ul>
             </span>
         </section>
-        <footer class="dialogue-footer">
+        <!-- <footer class="dialogue-footer">
             <div class="component-dialogue-bar-person">
-                 <!-- <span class="more iconfont icon-dialogue-jia"></span> -->
-                <router-link :to="{path:'/wechat/video',query: {user}}" tag="span"  style="margin: 0 auto;" class="iconfont icon-video" ></router-link>
-                <!-- <span class="more iconfont icon-video" style="margin: 0 auto;" v-on:click="play"></span> -->
-                <!-- <span class="iconfont icon-dialogue-jianpan" v-show="!currentChatWay" v-on:click="currentChatWay=true"></span>
+                 <span class="more iconfont icon-dialogue-jia"></span> 
+                 <router-link :to="{path:'/wechat/video',query: {user}}" tag="span"  style="margin: 0 auto;" class="iconfont icon-video" ></router-link>
+                 <span class="more iconfont icon-video" style="margin: 0 auto;" v-on:click="play"></span> 
+                <span class="iconfont icon-dialogue-jianpan" v-show="!currentChatWay" v-on:click="currentChatWay=true"></span>
                 <span class="iconfont icon-dialogue-voice" v-show="currentChatWay" v-on:click="currentChatWay=false"></span>
                 <div class="chat-way" v-show="!currentChatWay">
                     <div class="chat-say" v-press>
@@ -97,9 +97,9 @@
                         <div class="cancel-inner"></div>
                         <p>松开手指,取消发送</p>
                     </div>
-                </div> -->
+                </div>
             </div>
-        </footer>
+        </footer> -->
     </div>
 </template>
 <script>

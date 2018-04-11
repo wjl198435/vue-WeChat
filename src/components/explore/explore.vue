@@ -8,11 +8,11 @@
             <img src="../../assets/images/find_icon-circle.png" >
           </div>
           <div class="weui-cell__bd" style="line-height: 28px;">
-            生态圈
+            供应链
           </div>
           <div class="weui-cell__ft">
             <div class="home__notice" v-show="momentNewMsg">
-              <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" alt="" class="">
+              <img src="http://p5iqmly4z.bkt.clouddn.com/iot.jpg" alt="" class="">
               <i class="new-msg-dot"></i>
             </div>
           </div>

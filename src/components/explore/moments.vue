@@ -6,47 +6,47 @@
                 <router-link to="/explore" tag="div" class="iconfont icon-return-arrow">
                     <span>发现</span>
                 </router-link>
-                <span>朋友圈</span>
+                <span>供应链</span>
             </div>
         </header>
         <div class="home-pic">
             <div class="home-pic-base">
                 <div class="top-pic">
                     <div class="top-pic-inner">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/header01.png">
+                        <img src="http://p5iqmly4z.bkt.clouddn.com/superman.jpeg">
                     </div>
                 </div>
-                <div class="top-name _ellipsis">阿荡</div>
+                <div class="top-name _ellipsis">生态农业</div>
             </div>
         </div>
         <div class="weui-cell moments__post">
             <div class="weui-cell__hd">
-                <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg">
+                <img src="http://p5iqmly4z.bkt.clouddn.com/blockchain.jpg">
             </div>
             <div class="weui-cell__bd">
                 <!-- 人名链接 -->
                 <a class="title">
-                    <span>夜华</span>
+                    <span>生态猪场</span>
                 </a>
                 <!-- post内容 -->
-                <p id="paragraph" class="paragraph">点击下方图片预览，点击下方图片预览，点击下方图片预览</p>
+                <p id="paragraph" class="paragraph"> 借助农业信息化、智能化技术手段；精准、科学、合理培养成长；品种优良，肉质鲜美、健康；更营养更健康；在白领消费群体尤其受青睐</p>
                 <!-- 伸张链接 -->
                 <!-- <a id="paragraphExtender" class="paragraphExtender">显示全文</a> -->
                 <!-- 相册 -->
                 <div class="thumbnails my-gallery">
                     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
-                        <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
-                            <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="thumbnail" alt="Image description" />
+                        <a href="http://p5ique2o2.bkt.clouddn.com/case1.jpeg" itemprop="contentUrl" data-size="400x400">
+                            <img src="http://p5ique2o2.bkt.clouddn.com/case1.jpeg" itemprop="thumbnail" alt="Image description" />
                         </a>
                         <figcaption itemprop="caption description">Image 01</figcaption>
                     </figure>
 
-                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
+                    <!-- <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
                         <a href="https://sinacloud.net/vue-wechat/images/headers/zhenji.jpg" itemprop="contentUrl" data-size="400x400">
                             <img src="https://sinacloud.net/vue-wechat/images/headers/zhenji.jpg" itemprop="thumbnail" alt="Image description" />
                         </a>
                         <figcaption itemprop="caption description">Image 02</figcaption>
-                    </figure>
+                    </figure> -->
                 </div>
                 <!-- 资料条 -->
                 <div class="toolbar">
@@ -60,7 +60,11 @@
                     <span id="actionToggle" class="actionToggle">..</span>
                 </div>
                 <!-- 赞／评论区 -->
-                <p class="liketext"><i class="icon icon-96"></i><span class="nickname">夜华</span>,<span class="nickname">孙尚香</span></p>
+                <p class="liketext">
+                    <i class="icon icon-96"></i>
+                    <span class="nickname">物联网</span>,
+                    <span class="nickname">人工智能</span>
+                </p>
             </div>
             <!-- 结束 post -->
         </div>
@@ -68,32 +72,32 @@
 
         <div class="weui-cell moments__post">
             <div class="weui-cell__hd">
-                <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg">
+                <img src="http://p5iqmly4z.bkt.clouddn.com/iot.jpg">
             </div>
             <div class="weui-cell__bd">
                 <!-- 人名链接 -->
                 <a class="title">
-                    <span>夜华</span>
+                    <span>生态水果</span>
                 </a>
                 <!-- post内容 -->
-                <p id="paragraph" class="paragraph">weui目前是比较好用的ui,在微信和手机中表现非常好。weui目前是比较好用的ui,在微信和手机中表现非常好</p>
+                <p id="paragraph" class="paragraph">借助海哇科技-农业物联网，过程规范、科学培养成果，水果水分充足、营养更均衡、合理；更含丰富微量元素，对身体更健康。</p>
                 <!-- 伸张链接 -->
                 <!-- <a id="paragraphExtender" class="paragraphExtender">显示全文</a> -->
                 <!-- 相册 -->
                 <div class="thumbnails my-gallery">
                     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
-                        <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
-                            <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="thumbnail" alt="Image description" />
+                        <a href="http://p5ique2o2.bkt.clouddn.com/case2.jpeg" itemprop="contentUrl" data-size="400x400">
+                            <img src="http://p5ique2o2.bkt.clouddn.com/case2.jpeg" itemprop="thumbnail" alt="Image description" />
                         </a>
                         <figcaption itemprop="caption description">Image 01</figcaption>
                     </figure>
 
-                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
+                    <!-- <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
                         <a href="https://sinacloud.net/vue-wechat/images/headers/zhugeliang.jpg" itemprop="contentUrl" data-size="400x400">
                             <img src="https://sinacloud.net/vue-wechat/images/headers/zhugeliang.jpg" itemprop="thumbnail" alt="Image description" />
                         </a>
                         <figcaption itemprop="caption description">Image 02</figcaption>
-                    </figure>
+                    </figure> -->
                 </div>
                 <!-- 资料条 -->
                 <div class="toolbar">
@@ -107,38 +111,42 @@
                     <span id="actionToggle" class="actionToggle">..</span>
                 </div>
                 <!-- 赞／评论区 -->
-                <p class="liketext"><i class="icon icon-96"></i><span class="nickname">夜华</span>,<span class="nickname">孙尚香</span></p>
+                <p class="liketext">
+                    <i class="icon icon-96"></i>
+                    <span class="nickname">区块链</span>,
+                    <span class="nickname">人工智能</span>
+                </p>
             </div>
             <!-- 结束 post -->
         </div>
         <div class="weui-cell moments__post">
             <div class="weui-cell__hd">
-                <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg">
+                <img src="http://p5iqmly4z.bkt.clouddn.com/ai.jpg">
             </div>
             <div class="weui-cell__bd">
                 <!-- 人名链接 -->
                 <a class="title">
-                    <span>夜华</span>
+                    <span>生态蔬菜</span>
                 </a>
                 <!-- post内容 -->
-                <p id="paragraph" class="paragraph">weui目前是比较好用的ui,在微信和手机中表现非常好。weui目前是比较好用的ui,在微信和手机中表现非常好</p>
+                <p id="paragraph" class="paragraph">选自优良品种，配合海哇现代农业技术，让蔬菜成活率更高，生产成本更低廉，蔬菜营养更合理。</p>
                 <!-- 伸张链接 -->
                 <!-- <a id="paragraphExtender" class="paragraphExtender">显示全文</a> -->
                 <!-- 相册 -->
                <div class="thumbnails my-gallery">
                     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
-                        <a href="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg" itemprop="contentUrl" data-size="400x400">
-                            <img src="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg" itemprop="thumbnail" alt="Image description" />
+                        <a href="http://p5ique2o2.bkt.clouddn.com/case3.jpeg" itemprop="contentUrl" data-size="400x400">
+                            <img src="http://p5ique2o2.bkt.clouddn.com/case3.jpeg" itemprop="thumbnail" alt="Image description" />
                         </a>
                         <figcaption itemprop="caption description">Image 01</figcaption>
                     </figure>
 
-                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
+                    <!-- <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail">
                         <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
                             <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="thumbnail" alt="Image description" />
                         </a>
                         <figcaption itemprop="caption description">Image 02</figcaption>
-                    </figure>
+                    </figure> -->
                 </div>
                 <!-- 资料条 -->
                 <div class="toolbar">
@@ -152,7 +160,11 @@
                     <span id="actionToggle" class="actionToggle">..</span>
                 </div>
                 <!-- 赞／评论区 -->
-                <p class="liketext"><i class="icon icon-96"></i><span class="nickname">夜华</span>,<span class="nickname">孙尚香</span></p>
+                <p class="liketext">
+                    <i class="icon icon-96"></i>
+                    <span class="nickname">区块链</span>
+                    ,<span class="nickname">物联网</span>   
+                </p>
             </div>
             <!-- 结束 post -->
         </div>

@@ -36,7 +36,7 @@
                     <router-link :key="item.deviceSerial" :to="{path:'/contact/details',query:{deviceSerial:item.deviceSerial}}" class="weui-cell weui-cell_access" 
                     v-for="item in videoList"  tag="div">
                          <div class="weui-cell__hd" >
-                            <img :src='imgBaseUrl+"camera.jpg"'  class="home__mini-avatar___1nSrW" >
+                            <img :src='imgCDNBaseUrl+"camera.jpg"'  class="home__mini-avatar___1nSrW" >
                         </div>
                            <ul style="margin:0; padding:0px; list-sytle:none">
                             <li>
@@ -81,7 +81,7 @@ export default {
   },
   computed: {
     ...mapState([
-      "imgBaseUrl",
+      "imgCDNBaseUrl",
       "videoList",
       "sensorList",
       "switchList",

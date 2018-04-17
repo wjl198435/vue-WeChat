@@ -5,6 +5,7 @@
     <ul class="wechat-list">
         <!--props传递消息对象 baseMsgObj -->
         <msg-item v-for="baseMsgObj in $store.state.msgList.baseMsg" :item="baseMsgObj" class="list-row line-bottom" :key="baseMsgObj.mid"></msg-item>
+        <!-- <span>{{$store.state.msgList.baseMsg.length}} </span> -->
     </ul>
   </div>
 </template>
@@ -21,7 +22,14 @@
             return {
                 "pageName": "消息"
             }
-        }
+        },
+
+         async created() {
+            //console.log("wechat --> created!");
+            await this.$store.dispatch("fetchDeviceMsg",{
+            deviceSerial: "839338719"});
+            //console.log(JSON.stringify(this.$store.state.msgList.baseMsg))
+            },
     }
 </script>
 <style>

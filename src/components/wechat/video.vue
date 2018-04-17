@@ -1,5 +1,5 @@
 <template>
-  <div class="liveView">
+  <div >
     <header id="wx-header">
             <div class="center">
                 <router-link :to="{path:'/contact/details',query: {deviceSerial:qDeviceSerial}}" tag="div" class="iconfont icon-return-arrow">
@@ -22,15 +22,40 @@
 
     <toast v-model="showToast" position="middle" :value=true :time="5000" text="设备不在线" type="warn"></toast>
 
-    <footer class="dialogue-footer">
+    <!-- <footer class="dialogue-footer">
       <div class="component-dialogue-bar-person">
       <span class="iconfont icon-camera"  v-on:click="onTest" style="margin: 0 auto;"> </span>
       <span class="iconfont icon-record"  v-on:click="onTest" style="margin: 0 auto;"></span>
       <span class="iconfont icon-replay"  v-on:click="enterStream" style="margin: 0 auto;"></span>
       <span class="iconfont icon-hk-quit"  v-on:click="onTest" style="margin: 0 auto;"></span> 
       </div>
-    </footer>
+    </footer> -->
+
+    
+
+<div>
+  <tabbar>
+      <tabbar-item>
+        <img slot="icon" src="../../assets/images/contact_add-friend-contacts.png">
+        <span slot="label">Wechat</span>
+      </tabbar-item>
+      <tabbar-item show-dot>
+        <img slot="icon" src="../../assets/images/contact_add-friend-my-qr.png">
+        <span slot="label">Message</span>
+      </tabbar-item>
+      <tabbar-item selected link="/component/demo">
+        <img slot="icon" src="../../assets/images/contact_add-friend-my-qr.png">
+        <span slot="label">Explore</span>
+      </tabbar-item>
+      <tabbar-item badge="2">
+        <img slot="icon" src="../../assets/images/contact_add-friend-my-qr.png">
+        <span slot="label">News</span>
+      </tabbar-item>
+    </tabbar>
+</div>
   </div>
+
+
 </template>
 
 <script>
@@ -38,6 +63,7 @@ import { mapState } from "vuex";
 import { mapGetters } from 'vuex'
 import contact from "../../vuex/contacts";
 import { Toast } from 'vux'
+import { Tabbar, TabbarItem, Group, Cell } from 'vux'
 export default {
   name: "live",
 
@@ -83,7 +109,12 @@ export default {
   },
 
   components:{
-   Toast
+   Toast,
+    Tabbar,
+    TabbarItem,
+    Group,
+    Cell
+
   },
 
   computed: {

@@ -187,7 +187,28 @@ export default {
    
     //console.log("state.fetchVideoInfo:"+JSON.stringify(state.currentVideoInfo))
     return res
-  }
+  },
+
+  async fetchDeviceMsg({ state },deviceSerial) {
+    //console.log("actions->fetchDeviceMsg-->deviceSerial:",deviceSerial)
+    const res = await Services.fetchDeviceAlarms(deviceSerial)
+    //state.alarmList = res.data.data
+    state.msgList.baseMsg.push(res.data.data)
+    //console.log("state.fetchDeviceAlarms:"+JSON.stringify(res.data))
+   return res
+ },
+
+//   async fetchAlarms ({ state },_id) {
+//     console.log("actions->fetchVideoInfo-->id:",_id)
+//     if(_id===state.currentVideoInfo.deviceSerial  || _id===null)return
+//     const res = await Services.fetchVideoeInfo(_id)
+//     state.currentVideoInfo = res.data.data.data
+  
+//    //console.log("state.fetchVideoInfo:"+JSON.stringify(state.currentVideoInfo))
+//    return res
+//  }
+
+
 
   
 }

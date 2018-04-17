@@ -63,7 +63,7 @@
         margin-left:10px;
         position:relative;
         border-radius:4px;
-        max-width:88px;
+        max-width:98px;
         height: 20px;
         line-height: 20px;
         font-size:14px;
@@ -71,6 +71,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        padding:0 5px;
         /* margin: 0 auto; */
     }
 

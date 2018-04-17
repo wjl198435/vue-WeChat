@@ -16,7 +16,8 @@
         <section   class="dialogue-section clearfix "  >
             <div v-for="item in msgInfo.msg" >
                 <div class="weui-cell row clearfix " >
-                <img :src="item.headerUrl" class="header">
+                    
+                <img :src='imageCDN+item.headerUrl' class="header">
                 <p class="text" v-more>{{item.text}}</p> 
                 <figcaption itemprop="caption description" >  
                     <p class="textdate" v-more>{{item.date|formatDate}}</p>
@@ -25,7 +26,10 @@
             
                 <div  style="margin:10px" >
                 <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="thumbnail" >
-                    <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
+                    <a :href=item.alarmPicUrl itemprop="contentUrl" data-size="400x400">
+                        <img style="max-height: 120px"  :src=item.alarmPicUrl itemprop="thumbnail" alt="Image description" />
+                    </a>
+                    <!-- <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
                         <img style="max-height: 120px"  src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="thumbnail" alt="Image description" />
                     </a>
                     <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
@@ -33,10 +37,7 @@
                     </a>
                     <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
                         <img style="max-height: 120px"  src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="thumbnail" alt="Image description" />
-                    </a>
-                    <a href="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="contentUrl" data-size="400x400">
-                        <img style="max-height: 120px"  src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg" itemprop="thumbnail" alt="Image description" />
-                    </a>
+                    </a> -->
                     
                     </figure>
                     
@@ -103,7 +104,10 @@
     </div>
 </template>
 <script>
+    import { mapState } from 'vuex'
     export default {
+
+         
         data() {
             return {
                 //mid:this.$route.query.mid,
@@ -114,18 +118,25 @@
                     // sayActive: false // false 键盘打字 true 语音输入
             }
         },
+
+           
+
        filters: {
     formatDate: function (value) {
       if (!value) return ''
       let date = new Date(value * 1000)
+
       let year = date.getFullYear()  // 获取完整的年份(4位,1970)
+     
       let month = date.getMonth() + 1  // 获取月份(0-11,0代表1月,用的时候记得加上1)
       let day = date.getDate()  // 获取日(1-31)
-      let hour = date.getHours()  // 获取小时数(0-23)
+      let hour = date.getUTCHours()  // 获取小时数(0-23)
+      let hHour= hour>9 ? '' : 0
       let minute = date.getMinutes()  // 获取分钟数(0-59)
+      let hMinute=minute>9?'':0
       let weekDay = date.getDay() > 0 ? date.getDay() - 1 : 6 // 获取星期中的天数(0-6) 0代表周日
       let week = ['一', '二', '三', '四', '五', '六', '日']
-      return  '星期'+week[weekDay]+" "+ hour + ':' + minute 
+      return  '星期'+week[weekDay]+" "+hHour+ hour + ':'+ hMinute + minute 
     }
   },
         beforeRouteEnter(to, from, next) {
@@ -134,9 +145,14 @@
             })
         },
         computed: {
+         ...mapState({
+            imageCDN: 'imgCDNBaseUrl',    
+            }),
+  
+
             msgInfo() {
                 for (var i in this.$store.state.msgList.baseMsg) {
-                    if (this.$store.state.msgList.baseMsg[i].mid == this.$route.query.mid) {
+                    if (this.$store.state.msgList.baseMsg[i].deviceSerial == this.$route.query.deviceSerial) {
                         return this.$store.state.msgList.baseMsg[i]
                     }
                 }
@@ -254,7 +270,7 @@
         },
 
         beforeCreate: function(){
-            console.log('ready-->deviceid: ' + this.$route.query.mid);
+            console.log('ready-->deviceSerial: ' + this.$route.query.deviceSerial);
             //console.log('ready-->user: ' + this.$route.query.user.src);
         
         }

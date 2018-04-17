@@ -80,6 +80,12 @@ class Services {
         source 
     })
   }
+
+  fetchDeviceAlarms({deviceSerial}){
+    return axios.post('/ys7/getDeviceAlarms',{
+      deviceSerial 
+    })
+  }
 }
 
 export default new Services()

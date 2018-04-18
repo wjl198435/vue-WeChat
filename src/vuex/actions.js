@@ -193,7 +193,10 @@ export default {
     //console.log("actions->fetchDeviceMsg-->deviceSerial:",deviceSerial)
     const res = await Services.fetchDeviceAlarms(deviceSerial)
     //state.alarmList = res.data.data
-    state.msgList.baseMsg.push(res.data.data)
+    if(res.data.success){   
+        state.msgList.baseMsg.push(res.data.data)
+    }
+    
     //console.log("state.fetchDeviceAlarms:"+JSON.stringify(res.data))
    return res
  },

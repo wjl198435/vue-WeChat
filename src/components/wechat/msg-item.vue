@@ -69,7 +69,7 @@ import { mapState } from 'vuex'
         props: ["item"],
         data() {
             return {
-                read: this.item.read,
+                read: this.item.msg.read,
                 deleteMsg: false
             }
         },
@@ -115,7 +115,7 @@ import { mapState } from 'vuex'
                 // console.group('------mounted 挂载结束状态------');
                //console.log("mounted:"+this.$store.state.allContacts[0].src) ;
                //let src=this.$store.state.allContacts[this.mid-1].src;
-                console.log("msg:"+JSON.stringify(this.$store.state.msgList.baseMsg));
+                //console.log("msg:"+JSON.stringify(this.$store.state.msgList.baseMsg));
                //this.playerOptions.sources[0].src=src;
             },
 

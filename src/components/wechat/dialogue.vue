@@ -20,7 +20,7 @@
                 <img :src='imageCDN+item.headerUrl' class="header">
                 <p class="text" v-more>{{item.text}}</p> 
                 <figcaption itemprop="caption description" >  
-                    <p class="textdate" v-more>{{item.date|formatDate}}</p>
+                    <p class="textdate" v-more>{{item.date|fmtDate('hh:mm:ss')}}</p>
                     </figcaption>  
                 </div>
             

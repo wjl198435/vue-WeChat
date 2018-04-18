@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="desc-box">
-                 <div class="desc-time">{{item.msg[item.msg.length-1].date | fmtDate('hh:ss')}}</div>
+                 <div class="desc-time">{{item.msg[0].date | fmtDate('hh:ss')}}</div>
                 <div  v-if="item.type=='group'">{{item.group_name}}</div>  
                 <div  v-else>{{item.remark}} </div>
                 <div class="desc-msg">

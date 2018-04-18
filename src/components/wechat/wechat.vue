@@ -41,23 +41,22 @@ export default {
     await this.$store.dispatch("fetchVideoes");
     console.log("wechat --> created!", "videoList" + this.videoList.length);
 
-    this.videoList.forEach(element => {
-      //console.log(JSON.stringify(element));
-      //await this.$store.dispatch("fetchDeviceMsg", {
-     //deviceSerial: ""
-    //});
-    });
-
+    
      for (var i=0,len=this.videoList.length; i<len; i++)
     {
-        
+         
+        let currentTime=new Date()
         let data = await this.$store.dispatch("fetchDeviceMsg", {
-        deviceSerial: this.videoList[i].deviceSerial
+        deviceSerial: this.videoList[i].deviceSerial,
+        time:currentTime
         });
-        if(this.videoList[i].deviceSerial==="839338877"){
-           console.log(JSON.stringify(this.videoList[i]))
-           console.log(JSON.stringify(data))
-        }
+       
+        console.log(this.videoList[i].deviceSerial,currentTime)
+        console.log(JSON.stringify(data))
+        // if(this.videoList[i].deviceSerial==="839338877"){
+        //    console.log(JSON.stringify(this.videoList[i]))
+        //    console.log(JSON.stringify(data))
+        // }
     }
     
     //console.log(JSON.stringify(this.$store.state.msgList.baseMsg))

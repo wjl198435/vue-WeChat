@@ -12,14 +12,14 @@
                 </div>
             </div>
             <div class="desc-box">
-                 <div class="desc-time">{{item.msg[0].date | fmtDate('hh:ss')}}</div>
+                 <div class="desc-time">{{item.msg[0].date | fmtDate('hh:mm')}}</div>
                 <div  v-if="item.type=='group'">{{item.group_name}}</div>  
                 <div  v-else>{{item.remark}} </div>
                 <div class="desc-msg">
                     <div class="desc-mute iconfont icon-mute" v-show="item.quiet">
                     </div>
                     <span v-show="item.type=='group'">{{item.msg[item.msg.length-1].name}}:</span>
-                    <span>{{item.msg[item.msg.length-1].text}}</span>
+                    <span>{{item.msg[0].text}}</span>
                 </div>
             </div>
     </router-link>    

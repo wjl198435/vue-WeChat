@@ -10,7 +10,7 @@
         </header>
         <div class="weui-cells">
             <div class="weui-cell">
-                <div class="weui-cell__hd"><img :src='imgBaseUrl+"camera.jpg"' alt="" class="self-header" style="width:60px"></div>
+                <div class="weui-cell__hd"><img :src='imgCDNBaseUrl+"camera.jpg"' alt="" class="self-header" style="width:60px"></div>
                 <!-- <span>{{currentVideo}}</span> -->
                 <div class="weui-cell__bd">
                     <!-- <h4 class="self-nickname">{{userInfo.nickname}}<span class="gender" :class="[userInfo.sex===1?'gender-male':'gender-female']"></span></h4> -->
@@ -108,7 +108,7 @@ export default {
 
   computed: {
     ...mapState([
-      "imgBaseUrl",
+      "imgCDNBaseUrl",
       "currentVideoInfo",
       "status",
       "defence",
